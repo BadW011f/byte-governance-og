@@ -121,7 +121,7 @@ export async function GET(
                     width: "1200px",
                     height: "630px",
                     background:
-                        "radial-gradient(700px 300px at 85% 8%, rgba(255,122,24,.22), transparent 62%), radial-gradient(520px 260px at 0% 100%, rgba(255,255,255,.08), transparent 55%), linear-gradient(180deg, #05080c 0%, #020406 100%)",
+                        "radial-gradient(820px 340px at 82% 6%, rgba(255,255,255,.075), transparent 60%), radial-gradient(520px 260px at 10% 100%, rgba(255,255,255,.038), transparent 58%), linear-gradient(180deg, #050608 0%, #020304 100%)",
                     color: "#eef5ff",
                     display: "flex",
                     alignItems: "center",
@@ -136,10 +136,10 @@ export async function GET(
                         height: "542px",
                         border: "1px solid rgba(255,255,255,.16)",
                         background:
-                            "radial-gradient(520px 240px at 100% 0%, rgba(255,179,92,.12), transparent 55%), linear-gradient(180deg, rgba(255,255,255,.078), rgba(255,255,255,.026))",
+                            "radial-gradient(620px 260px at 100% 0%, rgba(255,255,255,.052), transparent 58%), linear-gradient(180deg, rgba(255,255,255,.072), rgba(255,255,255,.018))",
                         borderRadius: "34px",
                         boxShadow:
-                            "0 36px 95px rgba(0,0,0,.50), 0 0 0 1px rgba(255,179,92,.13), 0 0 38px rgba(255,122,0,.075), inset 0 1px 0 rgba(255,255,255,.22)",
+                            "0 36px 95px rgba(0,0,0,.50), 0 0 0 1px rgba(255,255,255,.075), 0 0 32px rgba(255,255,255,.026), inset 0 1px 0 rgba(255,255,255,.22)",
                         display: "flex",
                         flexDirection: "column",
                         overflow: "hidden",
@@ -227,8 +227,8 @@ export async function GET(
                                         height: "48px",
                                         borderRadius: "14px",
                                         background:
-                                            "linear-gradient(135deg,#fff4e6 0%,#ffb45c 45%,#ff7a18 100%)",
-                                        color: "#130b03",
+                                            "linear-gradient(135deg,#f5f7fa 0%,#c9d2dc 55%,#8f9aa5 100%)",
+                                        color: "#071015",
                                         display: "flex",
                                         alignItems: "center",
                                         justifyContent: "center",
@@ -251,7 +251,7 @@ export async function GET(
                                     <div
                                         style={{
                                             display: "flex",
-                                            color: "#ffbd72",
+                                            color: "#dfe7ef",
                                             fontSize: 18,
                                             fontWeight: 950,
                                             letterSpacing: "3px",
@@ -322,7 +322,7 @@ export async function GET(
                                     width: total > 0 ? "50%" : "33%",
                                     border: "1px solid rgba(255,179,92,.16)",
                                     background:
-                                        "linear-gradient(180deg, rgba(255,122,24,.10), rgba(8,12,18,.88))",
+                                        "linear-gradient(180deg, rgba(255,255,255,.065), rgba(8,12,18,.88))",
                                     borderRadius: "22px",
                                     padding: "16px",
                                 }}
@@ -343,7 +343,7 @@ export async function GET(
                                 <div
                                     style={{
                                         display: "flex",
-                                        color: "#ffbd72",
+                                        color: "#dfe7ef",
                                         fontSize: 34,
                                         fontWeight: 950,
                                         marginTop: "7px",
@@ -375,7 +375,7 @@ export async function GET(
                                     width: total > 0 ? "50%" : "33%",
                                     border: "1px solid rgba(255,255,255,.105)",
                                     background:
-                                        "linear-gradient(180deg, rgba(255,122,24,.10), rgba(8,12,18,.88))",
+                                        "linear-gradient(180deg, rgba(255,255,255,.065), rgba(8,12,18,.88))",
                                     borderRadius: "22px",
                                     padding: "16px",
                                 }}
@@ -444,9 +444,9 @@ export async function GET(
                                             height: "100%",
                                             borderRadius: "999px",
                                             background:
-                                                "linear-gradient(90deg,#ffad4f,#80ffd4,#ffffff)",
+                                                "linear-gradient(90deg,#c9d2dc,#f5f7fa)",
                                             boxShadow:
-                                                "0 0 18px rgba(255,179,92,.16)",
+                                                "0 0 18px rgba(255,255,255,.12)",
                                         }}
                                     />
                                 </div>
@@ -501,9 +501,9 @@ export async function GET(
                         <div
                             style={{
                                 display: "flex",
-                                color: "#130b03",
+                                color: "#071015",
                                 background:
-                                    "linear-gradient(135deg,#fff4e6 0%,#ffb45c 45%,#ff7a18 100%)",
+                                    "linear-gradient(135deg,#f5f7fa 0%,#c9d2dc 55%,#8f9aa5 100%)",
                                 border: "1px solid rgba(255,255,255,.22)",
                                 borderRadius: "18px",
                                 padding: "13px 18px",
