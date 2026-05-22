@@ -1,7 +1,7 @@
 import { getProposal } from "@/lib/supabase"
 
 const SITE_URL = "https://byte-governance-og.vercel.app"
-const CARD_VERSION = "governance-v1"
+const CARD_VERSION = "governance-v2"
 
 export async function generateMetadata({
     params,
@@ -115,84 +115,6 @@ export default async function ProposalPage({
                     {proposal.summary ||
                         "Vote, fund, and help shape what BYTE builds next."}
                 </p>
-
-                <div
-                    style={{
-                        display: "grid",
-                        gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
-                        gap: 12,
-                        marginTop: 24,
-                    }}
-                >
-                    <div
-                        style={{
-                            border: "1px solid rgba(255,255,255,.12)",
-                            borderRadius: 18,
-                            padding: 16,
-                            background: "rgba(255,255,255,.05)",
-                        }}
-                    >
-                        <div style={{ color: "#8f9aa5", fontSize: 12 }}>
-                            Status
-                        </div>
-                        <div
-                            style={{
-                                color: "#9fffd7",
-                                fontSize: 22,
-                                fontWeight: 900,
-                                marginTop: 6,
-                            }}
-                        >
-                            {proposal.status || "Active"}
-                        </div>
-                    </div>
-
-                    <div
-                        style={{
-                            border: "1px solid rgba(255,255,255,.12)",
-                            borderRadius: 18,
-                            padding: 16,
-                            background: "rgba(255,255,255,.05)",
-                        }}
-                    >
-                        <div style={{ color: "#8f9aa5", fontSize: 12 }}>
-                            For
-                        </div>
-                        <div
-                            style={{
-                                color: "#9fffd7",
-                                fontSize: 22,
-                                fontWeight: 900,
-                                marginTop: 6,
-                            }}
-                        >
-                            {proposal.votes_for || 0}
-                        </div>
-                    </div>
-
-                    <div
-                        style={{
-                            border: "1px solid rgba(255,255,255,.12)",
-                            borderRadius: 18,
-                            padding: 16,
-                            background: "rgba(255,255,255,.05)",
-                        }}
-                    >
-                        <div style={{ color: "#8f9aa5", fontSize: 12 }}>
-                            Against
-                        </div>
-                        <div
-                            style={{
-                                color: "#ff91a4",
-                                fontSize: 22,
-                                fontWeight: 900,
-                                marginTop: 6,
-                            }}
-                        >
-                            {proposal.votes_against || 0}
-                        </div>
-                    </div>
-                </div>
             </div>
         </main>
     )
