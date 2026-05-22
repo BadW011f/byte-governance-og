@@ -18,16 +18,20 @@ function percent(value: any, max: any) {
     return Math.max(0, Math.min(100, Math.round((v / m) * 100)))
 }
 
-function shortSummary(value: any) {
-    const text = String(value || "").trim()
-    if (!text || text.length < 12) {
-        return "Vote, fund, and help shape what BYTE builds next."
-    }
-    return text.length > 150 ? `${text.slice(0, 150)}...` : text
+function safeText(value: any, max = 120, fallback = "") {
+    const text = String(value || "")
+        .replace(/\s+/g, " ")
+        .trim()
+
+    if (!text) return fallback
+
+    return text.length > max ? `${text.slice(0, max).trim()}...` : text
 }
 
 function fundingCurrency(proposal: any) {
-    return String(proposal.funding_currency || proposal.funding_token || "USDC").toUpperCase()
+    return String(
+        proposal.funding_currency || proposal.funding_token || "USDC"
+    ).toUpperCase()
 }
 
 function fundingTotal(proposal: any) {
@@ -71,9 +75,14 @@ function fundingOverall(proposal: any) {
 }
 
 function statusText(proposal: any) {
-    if (fundingTotal(proposal) > 0 && communityGoal(proposal) > 0 && communityRaised(proposal) >= communityGoal(proposal)) {
+    if (
+        fundingTotal(proposal) > 0 &&
+        communityGoal(proposal) > 0 &&
+        communityRaised(proposal) >= communityGoal(proposal)
+    ) {
         return "Funded"
     }
+
     return proposal.status || "Active"
 }
 
@@ -95,9 +104,15 @@ export async function GET(
     const totalVotes = votesFor + votesAgainst + votesAbstain
     const yesPct = percent(votesFor, Math.max(totalVotes, 1))
 
-    const risk = String(proposal.risk_level || "Unreviewed")
-    const status = statusText(proposal)
-    const category = proposal.category || "General"
+    const risk = safeText(proposal.risk_level || "Unreviewed", 20, "Unreviewed")
+    const status = safeText(statusText(proposal), 24, "Active")
+    const category = safeText(proposal.category || "General", 24, "General")
+    const title = safeText(proposal.title, 64, "BYTE Governance Proposal")
+    const summary = safeText(
+        proposal.summary,
+        118,
+        "Vote, fund, and help shape what BYTE builds next."
+    )
 
     return new ImageResponse(
         (
@@ -276,7 +291,7 @@ export async function GET(
                                     maxWidth: "910px",
                                 }}
                             >
-                                {proposal.title}
+                                {title}
                             </div>
 
                             <div
@@ -289,7 +304,7 @@ export async function GET(
                                     maxWidth: "900px",
                                 }}
                             >
-                                {shortSummary(proposal.summary)}
+                                {summary}
                             </div>
                         </div>
 
@@ -334,7 +349,9 @@ export async function GET(
                                         marginTop: "7px",
                                     }}
                                 >
-                                    {total > 0 ? `${fundedPct}%` : money(proposal.budget_usd)}
+                                    {total > 0
+                                        ? `${fundedPct}%`
+                                        : money(proposal.budget_usd)}
                                 </div>
 
                                 <div
